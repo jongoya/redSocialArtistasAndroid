@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/colores2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/layoutTopMensajes">
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="Redactar"
+            android:id="@+id/redactar"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:src="@drawable/escribir"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bandeja"
+            android:id="@+id/textView11"
+            android:textColor="#000000"
+            android:textStyle="bold|italic"
+            android:textSize="25dp"
+            android:layout_centerInParent="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#a8a8a8"></RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:id="@+id/principalMensajes"
+        android:layout_below="@+id/layoutTopMensajes">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/pestañasMensajes">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:id="@+id/layoutPestañasMensajeria">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Entrada"
+                    android:id="@+id/entrada"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="0dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:background="@null" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enviados"
+                    android:id="@+id/enviados"
+                    android:layout_toRightOf="@+id/entrada"
+                    android:layout_marginLeft="50dp"
+                    android:background="@null" />
+
+                <RelativeLayout
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="false"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginLeft="18dp"
+                    android:background="#5AF97F"
+                    android:id="@+id/indicadorMensajes"></RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#a8a8a8"></RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/layoutListaMensajes"
+            android:layout_below="@+id/pestañasMensajes"
+            android:layout_toStartOf="@+id/layoutEliminarMensajes">
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/listaMensajes"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="0dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/pestañasMensajes"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentRight="true"
+            android:id="@+id/layoutEliminarMensajes">
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/listaEliminarMensajes" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:id="@+id/visualizar"
+        android:background="@drawable/rounded_corners"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="false"
+            android:id="@+id/layoutTituloMensaje">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/campoAsuntoMensaje"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                android:layout_alignParentTop="false"
+                android:layout_centerVertical="true"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold|italic"
+                android:lines="4"
+                android:layout_toLeftOf="@+id/responderVisualizarMensaje"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#a8a8a8"></RelativeLayout>
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/cerrarMensaje"
+                android:background="@null"
+                android:src="@drawable/siguientepeq"
+                android:scaleType="centerCrop"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/responderVisualizarMensaje"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/cerrarMensaje"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/responder"
+                android:scaleType="fitCenter"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/layoutCuerpoMensaje"
+            android:layout_below="@+id/layoutTituloMensaje">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mensaje:"
+                android:id="@+id/campoFechaMensaje"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="15dp"
+                android:textColor="#a8a8a8"
+                android:layout_marginRight="15dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="campo Mensaje"
+                android:id="@+id/campoCuerpoMensaje"
+                android:lines="20"
+                android:layout_below="@+id/campoFechaMensaje"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:id="@+id/redacMensaje"
+        android:background="@drawable/rounded_corners"
+        android:layout_margin="15dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/layoutTopNuevoMensaje">
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/enviarNuevoMensaje"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:src="@drawable/escribir"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nuevo Mensaje"
+                android:id="@+id/textView12"
+                android:layout_toRightOf="@+id/enviarNuevoMensaje"
+                android:layout_toLeftOf="@+id/volverNuevoMensaje"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:textColor="#000000"
+                android:textSize="25dp"
+                android:textStyle="bold|italic"
+                android:gravity="center_horizontal" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/volverNuevoMensaje"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:src="@drawable/siguientepeq"
+                android:scaleType="centerCrop"
+                android:layout_centerVertical="true" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#a8a8a8"></RelativeLayout>
+        </RelativeLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:id="@+id/editUsuMensajes"
+            android:layout_below="@+id/layoutTopNuevoMensaje"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Nombre Artista:"
+            android:background="@drawable/editextstyle"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:id="@+id/editAsunMensajes"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/editextstyle"
+            android:layout_below="@+id/editUsuMensajes"
+            android:hint="Asunto:"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
+            android:paddingLeft="10dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editMenMensajes"
+            android:maxLines="20"
+            android:layout_below="@+id/editAsunMensajes"
+            android:background="@drawable/editextstyle"
+            android:hint="Mensaje:"
+            android:paddingLeft="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:layout_margin="10dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

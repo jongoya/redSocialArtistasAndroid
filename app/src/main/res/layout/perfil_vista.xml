@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/colores2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/portadaVista">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fotoPerfilArtista"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/relativeLayout2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:alpha="0.4"></RelativeLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:id="@+id/perfilVista"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@null" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Galeria"
+                android:id="@+id/galeriaVista"
+                android:layout_centerInParent="true"
+                android:background="@null" />
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:text="Mas"
+                android:id="@+id/videosVista"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/mas"
+                android:scaleType="centerCrop" />
+
+            <RelativeLayout
+                android:layout_width="40dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="25dp"
+                android:background="#5AF97F"
+                android:id="@+id/indicadorVista"></RelativeLayout>
+        </RelativeLayout>
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="Escribir"
+            android:id="@+id/escribirVista"
+            android:layout_above="@+id/relativeLayout2"
+            android:layout_alignParentStart="false"
+            android:background="@null"
+            android:src="@drawable/carta"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/portadaVista">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/layoutPerfilVista"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView3"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="0dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp">
+
+                <RelativeLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="Informacion Personal"
+                        android:id="@+id/personalVista"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/buttonstyle"
+                        android:layout_marginTop="20dp" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:id="@+id/txtPersoVista"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/personalVista"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp">
+
+                        <RelativeLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="left"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:id="@+id/camposPerso">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nombre:"
+                                android:id="@+id/campoNombreArtista"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentTop="true"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Apellidos:"
+                                android:id="@+id/campoApeArtista"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/campoNombreArtista"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Edad:"
+                                android:id="@+id/campoEdadArtista"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/campoApeArtista"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fecha:"
+                                android:id="@+id/campoFechaArtista"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/campoEdadArtista"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Correo:"
+                                android:id="@+id/campoCorreoArtista"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/campoFechaArtista"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pais:"
+                                android:id="@+id/campoPaisArtista"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/campoCorreoArtista"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ciudad:"
+                                android:id="@+id/campoCiudadArtista"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/campoPaisArtista"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="#000000" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="40dp"
+                            android:id="@+id/textosPerso"
+                            android:layout_toRightOf="@+id/camposPerso">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="New Text"
+                                android:id="@+id/nombreVista"
+                                android:layout_marginTop="10dp"
+                                android:layout_alignParentTop="true"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="New Text"
+                                android:id="@+id/apeVista"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/nombreVista"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="New Text"
+                                android:id="@+id/edadVista"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_below="@+id/apeVista"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="New Text"
+                                android:id="@+id/fechaVista"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/edadVista"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="New Text"
+                                android:id="@+id/correoVista"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/fechaVista"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="New Text"
+                                android:id="@+id/paisVista"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/correoVista"
+                                android:textColor="#000000" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="New Text"
+                                android:id="@+id/ciudadVista"
+                                android:layout_marginTop="10dp"
+                                android:layout_below="@+id/paisVista"
+                                android:layout_marginBottom="10dp"
+                                android:textColor="#000000" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="Informacion Profesional"
+                        android:id="@+id/profesionalVista"
+                        android:layout_below="@+id/txtPersoVista"
+                        android:layout_alignParentStart="false"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/buttonstyle" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_below="@+id/profesionalVista"
+                        android:layout_alignParentStart="false"
+                        android:id="@+id/txtProfeVista"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+
+                        <RelativeLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/imgProfesional"
+                            android:layout_marginBottom="10dp">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/imgArtistaVista"
+                                android:layout_width="175dp"
+                                android:layout_height="175dp"
+                                android:src="@drawable/loading"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentTop="true"
+                                app:civ_border_width="0dp"
+                                app:civ_border_color="#A8A8A8"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/infoProfesional"
+                            android:layout_below="@+id/imgProfesional">
+
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentTop="true"
+                                android:id="@+id/camposProfesional">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="nombre Profesional:"
+                                    android:id="@+id/nombreBarVista"
+                                    android:layout_alignParentTop="true"
+                                    android:textColor="#000000" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Generos:"
+                                    android:id="@+id/generoBarVista"
+                                    android:layout_below="@+id/nombreBarVista"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="#000000" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Instrumentos:"
+                                    android:id="@+id/pagWebBarVista"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_below="@+id/generoBarVista"
+                                    android:textColor="#000000" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Pagina Web:"
+                                    android:id="@+id/direcBarVista"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_below="@+id/pagWebBarVista"
+                                    android:layout_marginBottom="10dp"
+                                    android:textColor="#000000" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Precio:"
+                                    android:id="@+id/campoPrecioVista"
+                                    android:textColor="#000000"
+                                    android:layout_below="@+id/direcBarVista"
+                                    android:layout_marginBottom="10dp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:id="@+id/textosProfesional"
+                                android:layout_toRightOf="@+id/camposProfesional"
+                                android:layout_marginLeft="25dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="New Text"
+                                    android:id="@+id/nombreArVista"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:textColor="#000000" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="New Text"
+                                    android:id="@+id/generosVista"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_below="@+id/nombreArVista"
+                                    android:textColor="#000000" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="New Text"
+                                    android:id="@+id/instruVista"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_below="@+id/generosVista"
+                                    android:textColor="#000000" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="New Text"
+                                    android:id="@+id/pagWebVista"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_below="@+id/instruVista"
+                                    android:layout_marginBottom="10dp"
+                                    android:textColor="#000000" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="New Text"
+                                    android:textColor="#000000"
+                                    android:id="@+id/precioVista"
+                                    android:layout_below="@+id/pagWebVista"
+                                    android:layout_marginBottom="10dp" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="Recorrido Profesional"
+                        android:id="@+id/recorridoVista"
+                        android:layout_below="@+id/txtProfeVista"
+                        android:layout_alignParentStart="false"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/buttonstyle" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_below="@+id/recorridoVista"
+                        android:layout_alignParentStart="false"
+                        android:id="@+id/txtRecoVista"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true">
+
+                        <ScrollView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/scrollRecoVista"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginBottom="20dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/layoutGaleVista"
+            android:visibility="invisible">
+
+            <GridView
+                android:layout_width="match_parent"
+                android:layout_height="1330dp"
+                android:id="@+id/gridVista"
+                android:numColumns="3"
+                android:layout_margin="5dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/layoutVideosVista"
+            android:visibility="invisible">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView6" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="Video Promocion"
+                        android:id="@+id/videoPromocionVista"
+                        android:background="@drawable/buttonstyle"
+                        android:layout_marginTop="20dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:id="@+id/layoutPromocionVista"
+                        android:layout_below="@+id/videoPromocionVista"
+                        android:layout_marginTop="10dp">
+                        <com.google.android.youtube.player.YouTubePlayerView
+                            android:id="@+id/youtube_viewVista"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp" />
+                    </RelativeLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="Redes sociales"
+                        android:id="@+id/redesSocialesVista"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/buttonstyle"
+                        android:layout_below="@+id/layoutPromocionVista" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/layoutRedesSocialesVista"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/redesSocialesVista"
+                        android:layout_centerHorizontal="true">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/layoutEnlacesRedesVista"></LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imgAmpliadoArtista"
+        android:layout_margin="15dp"
+        android:visibility="invisible">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fotoAmpliado"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:alpha="0.4"></RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/tituloFotoArtista"
+                android:layout_centerInParent="true"
+                android:textSize="15dp"
+                android:textStyle="bold|italic"
+                android:textColor="#000000" />
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/crossFotoArtista"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:src="@drawable/cross"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/WebViewLayout"
+        android:visibility="invisible">
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/webViewVista"
+            android:layout_margin="15dp" />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/crossButtonVista"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/blackcross"
+            android:scaleType="centerCrop" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:background="#ffffff"
+        android:id="@+id/dialogEnviarMensaje"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar Mensaje"
+            android:id="@+id/textView10"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold|italic"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:id="@+id/campoAsuntoMensaje"
+            android:background="@drawable/editextstyle"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/textView10"
+            android:layout_marginTop="30dp"
+            android:hint="Asunto"
+            android:textColorHint="#000000"
+            android:textColor="#000000" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/layoutTextoMensaje"
+            android:layout_below="@+id/campoAsuntoMensaje"
+            android:layout_above="@+id/layoutEnivarMensaje"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/campoTextoMensaje"
+                android:background="@drawable/editextstyle"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:paddingLeft="10dp"
+                android:hint="Mensaje" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/layoutEnivarMensaje">
+
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:text="Enviar"
+                android:id="@+id/botonEnviarMensaje"
+                android:layout_centerInParent="true"
+                android:background="@drawable/buttonstyle" />
+        </RelativeLayout>
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/cerrarDialogoMensaje"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@null"
+            android:src="@drawable/blackcross"
+            android:scaleType="centerCrop" />
+    </RelativeLayout>
+</RelativeLayout>

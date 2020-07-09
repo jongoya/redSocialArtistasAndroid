@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/colores2">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView5" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="informacion personal"
+                android:id="@+id/personalEditar"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/buttonstyle"
+                android:layout_marginTop="35dp" />
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:id="@+id/layPersoEdit"
+                android:layout_below="@+id/personalEditar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/nombreEditar"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/editextstyle"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/apeEditar"
+                    android:layout_below="@+id/nombreEditar"
+                    android:background="@drawable/editextstyle"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/edadEditar"
+                    android:layout_below="@+id/apeEditar"
+                    android:background="@drawable/editextstyle"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/fechaEditar"
+                    android:background="@drawable/editextstyle"
+                    android:layout_below="@+id/edadEditar"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/correoEditar"
+                    android:background="@drawable/editextstyle"
+                    android:layout_below="@+id/fechaEditar"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/paisEditar"
+                    android:layout_below="@+id/correoEditar"
+                    android:background="@drawable/editextstyle"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/ciudadEditar"
+                    android:background="@drawable/editextstyle"
+                    android:layout_below="@+id/paisEditar"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:layout_width="160dp"
+                    android:layout_height="35dp"
+                    android:text="Guardar"
+                    android:id="@+id/guardarPersoEditar"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_below="@+id/ciudadEditar"
+                    android:background="@drawable/buttonstyle"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="informacion profesional"
+                android:id="@+id/profeEditar"
+                android:layout_below="@+id/layPersoEdit"
+                android:background="@drawable/buttonstyle"
+                android:layout_marginTop="10dp" />
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:id="@+id/layProfeEdit"
+                android:layout_below="@+id/profeEditar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/nombreArEditar"
+                    android:background="@drawable/editextstyle"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/generoEditar"
+                    android:layout_below="@+id/nombreArEditar"
+                    android:background="@drawable/editextstyle"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/instruEditar"
+                    android:background="@drawable/editextstyle"
+                    android:layout_below="@+id/generoEditar"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/pagWebEditar"
+                    android:background="@drawable/editextstyle"
+                    android:layout_below="@+id/instruEditar"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/precioEditar"
+                    android:layout_below="@+id/pagWebEditar"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/editextstyle"
+                    android:textColorHint="#000000"
+                    android:textColor="#000000"
+                    android:paddingLeft="10dp" />
+
+                <Button
+                    android:layout_width="160dp"
+                    android:layout_height="35dp"
+                    android:text="Guardar"
+                    android:id="@+id/guardarProfeEditar"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_below="@+id/precioEditar"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/buttonstyle"
+                    android:layout_marginTop="10dp" />
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="recorrido profesional"
+                android:id="@+id/recoEditar"
+                android:layout_below="@+id/layProfeEdit"
+                android:background="@drawable/buttonstyle"
+                android:layout_marginTop="10dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/layRecoEdit"
+                android:layout_below="@+id/recoEditar"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:layout_width="160dp"
+                    android:layout_height="35dp"
+                    android:text="Recorrido Actual"
+                    android:id="@+id/recorridoActual"
+                    android:layout_gravity="left|right"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/buttonstyle" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:id="@+id/recoActual"
+                    android:layout_below="@+id/recorridoActual"
+                    android:layout_centerHorizontal="true">
+
+                    <ScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/scrollEditar"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="0dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp" >
+
+                    </ScrollView>
+                </RelativeLayout>
+
+                <Button
+                    android:layout_width="160dp"
+                    android:layout_height="35dp"
+                    android:text="Añadir Recorrido"
+                    android:id="@+id/añadirRecorrido"
+                    android:layout_gravity="left|right"
+                    android:layout_below="@+id/recoActual"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/buttonstyle" />
+
+                <RelativeLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:id="@+id/anadirReco"
+                    android:layout_below="@+id/añadirRecorrido"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true">
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/tipoEdit"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/editextstyle"
+                        android:hint="Experiencia"
+                        android:paddingLeft="10dp"
+                        android:textColorHint="#000000"
+                        android:textColor="#000000" />
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/generoEdit"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/tipoEdit"
+                        android:background="@drawable/editextstyle"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
+                        android:paddingLeft="10dp"
+                        android:hint="Generos" />
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/instruEdit"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/generoEdit"
+                        android:background="@drawable/editextstyle"
+                        android:hint="Instrumentos"
+                        android:paddingLeft="10dp"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000" />
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/fechaIniEdit"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/instruEdit"
+                        android:background="@drawable/editextstyle"
+                        android:textColorHint="#000000"
+                        android:textColor="#000000"
+                        android:paddingLeft="10dp"
+                        android:hint="Fecha de Inicio" />
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/fechaFinEdit"
+                        android:background="@drawable/editextstyle"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/fechaIniEdit"
+                        android:hint="Fecha de Fin"
+                        android:paddingLeft="10dp"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000" />
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/ciudadEdit"
+                        android:background="@drawable/editextstyle"
+                        android:layout_below="@+id/fechaFinEdit"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
+                        android:paddingLeft="10dp"
+                        android:hint="Ciudad" />
+
+                    <EditText
+                        android:layout_width="200dp"
+                        android:layout_height="150dp"
+                        android:inputType="textMultiLine"
+                        android:ems="10"
+                        android:id="@+id/comentariosEdit"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/ciudadEdit"
+                        android:background="@drawable/editextstyle"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
+                        android:paddingLeft="10dp"
+                        android:hint="Comentarios" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="35dp"
+                        android:text="Guardar"
+                        android:id="@+id/guarNuevoReco"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/comentariosEdit"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/buttonstyle" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="Credenciales"
+                android:id="@+id/botCredenciales"
+                android:layout_below="@+id/layRecoEdit"
+                android:background="@drawable/buttonstyle"
+                android:layout_marginTop="10dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:id="@+id/layoCredenciales"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/botCredenciales"
+                android:layout_centerHorizontal="true">
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/usuEditar"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/editextstyle"
+                    android:hint="Usuario"
+                    android:paddingLeft="10dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/contraEditar"
+                    android:background="@drawable/editextstyle"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/usuEditar"
+                    android:hint="Contraseña"
+                    android:textColor="#000000"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="#000000" />
+
+                <EditText
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/claveEditar"
+                    android:layout_below="@+id/contraEditar"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/editextstyle"
+                    android:hint="Clave"
+                    android:textColor="#000000"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="#000000" />
+
+                <Button
+                    android:layout_width="160dp"
+                    android:layout_height="35dp"
+                    android:text="Guardar"
+                    android:id="@+id/botCredenEditar"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/claveEditar"
+                    android:background="@drawable/buttonstyle"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

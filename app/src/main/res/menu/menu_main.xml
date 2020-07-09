@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".login.MainActivity">
+    <!--<item android:id="@+id/action_settings" android:title="Registrar"
+        android:orderInCategory="100" app:showAsAction="always"
+        />
+    <item android:id="@+id/paso2" android:title="Pag.2"
+        android:orderInCategory="100" app:showAsAction="always"
+        android:visible="false"/>
+    <item android:id="@+id/paso3" android:title="Pag.3"
+        android:orderInCategory="100" app:showAsAction="always"
+        android:visible="false"/>
+    <item android:id="@+id/pasofinal" android:title="Finalizar"
+        android:orderInCategory="100" app:showAsAction="always"
+        android:visible="false"/>
+    <item android:id="@+id/pasoOlvidado" android:title="Enviar"
+        android:orderInCategory="100" app:showAsAction="always"
+        android:visible="false"/>-->
+</menu>

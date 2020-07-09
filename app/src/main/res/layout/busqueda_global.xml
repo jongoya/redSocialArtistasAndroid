@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <fragment
+        android:id="@+id/mapGlobal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:id="@+id/layoutBusquedaGlob"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <EditText
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:id="@+id/direccionGlob"
+                android:textSize="15dp"
+                android:background="@drawable/editextstyle"
+                android:hint="Dirección"
+                android:textColorHint="#000000"
+                android:textStyle="bold|italic"
+                android:paddingLeft="10dp" />
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:text="Buscar"
+                android:id="@+id/botBusqGlob"
+                android:textSize="15dp"
+                android:background="@drawable/buttonstyle"
+                android:layout_toRightOf="@+id/direccionGlob"
+                android:layout_marginLeft="10dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:text="Abrir"
+        android:id="@+id/botonAbrirGlob"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"
+        android:background="@drawable/buttonstyle"
+        android:textSize="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp" />
+
+    <ListView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/listaGlobal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:visibility="invisible" />
+
+</RelativeLayout>
