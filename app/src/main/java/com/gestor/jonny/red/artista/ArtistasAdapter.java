@@ -11,7 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.gestor.jonny.red.R;
-import com.gestor.jonny.red.commons.Commons;
+import com.gestor.jonny.red.Commons.Commons;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -52,7 +52,7 @@ public class ArtistasAdapter extends BaseAdapter {
         TextView rol = (TextView)convertView.findViewById(R.id.rolText);
         hiloDeDescarga(artistas.get(position).getLink(), imagen);
         nombre.setText(artistas.get(position).getNombreAr());
-        rol.setText(Commons.getRol(Integer.valueOf(artistas.get(position).getRol())));
+        //rol.setText(Commons.getRol(Integer.valueOf(artistas.get(position).getRol())));
         ViewGroup.LayoutParams params = convertView.getLayoutParams();
         params.height = Commons.dpToPx(70, context);
         convertView.setLayoutParams(params);

@@ -1,594 +1,99 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context=".login.MainActivity"
+    android:layout_height="match_parent" tools:context=".Login.LoginActivity"
     android:id="@+id/Inicio"
     android:background="@drawable/colores2">
 
     <RelativeLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
         android:id="@+id/Login"
-        android:layout_centerInParent="true">
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="visible">
 
         <ImageView
-            android:layout_width="200dp"
+            android:id="@+id/iconoApp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:id="@+id/imageView"
-            android:layout_gravity="center_horizontal"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
             android:scaleType="centerCrop"
             android:src="@drawable/tituloapp" />
 
         <EditText
-            android:layout_width="200dp"
-            android:layout_height="35dp"
             android:id="@+id/textoUsuario"
-            android:hint="Usuario"
-            android:layout_below="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/iconoApp"
             android:layout_marginTop="10dp"
-            android:textColorHint="#000000"
-            android:textStyle="italic"
             android:background="@drawable/editextstyle"
-            android:paddingLeft="10dp"
+            android:hint="Usuario"
+            android:lines="1"
             android:maxLength="20"
-            android:lines="1" />
+            android:paddingLeft="10dp"
+            android:textColorHint="#000000"
+            android:textStyle="italic" />
 
         <EditText
-            android:layout_width="200dp"
-            android:layout_height="35dp"
             android:id="@+id/textoContra"
-            android:hint="Contraseña"
-            android:inputType="textWebPassword"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             android:layout_below="@+id/textoUsuario"
             android:layout_marginTop="10dp"
-            android:textColorHint="#000000"
-            android:textStyle="italic"
-            android:paddingLeft="10dp"
             android:background="@drawable/editextstyle"
+            android:hint="Contraseña"
+            android:inputType="textWebPassword"
+            android:lines="1"
             android:maxLength="20"
-            android:lines="1" />
+            android:paddingLeft="10dp"
+            android:textColorHint="#000000"
+            android:textStyle="italic" />
 
         <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recordar Datos"
             android:id="@+id/recordar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/textoContra"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             android:button="@drawable/checkboxstyle"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="10dp"
+            android:text="Recordar Datos" />
 
         <Button
-            android:layout_width="120dp"
+            android:id="@+id/botonLogin"
+            android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Iniciar"
-            android:id="@+id/botonIniciar"
             android:layout_below="@+id/recordar"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
-            android:background="@drawable/buttonstyle" />
+            android:background="@drawable/buttonstyle"
+            android:text="Login" />
+
+        <Button
+            android:id="@+id/botonRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/botonLogin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/buttonstyle"
+            android:text="Registro" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ha olvidado la contraseña?"
             android:id="@+id/textoOlvidado"
-            android:textSize="15dp"
-            android:visibility="visible"
-            android:layout_below="@+id/botonIniciar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/botonRegistro"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="25dp"
+            android:text="Ha olvidado la contraseña?"
             android:textColor="#8b8b83"
-            android:textStyle="bold|italic" />
+            android:textSize="15dp"
+            android:textStyle="bold|italic"
+            android:visibility="visible" />
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="invisible"
-        android:id="@+id/Registro1">
-
-        <RelativeLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_centerInParent="true">
-
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:id="@+id/nombre"
-                android:hint="Nombre"
-                android:textColorHint="#000000"
-                android:background="@drawable/editextstyle"
-                android:paddingLeft="10dp"
-                android:lines="1"
-                android:maxLength="25" />
-
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:id="@+id/apellidos"
-                android:hint="Apellidos"
-                android:visibility="visible"
-                android:layout_below="@+id/nombre"
-                android:layout_marginTop="10dp"
-                android:textColorHint="#000000"
-                android:background="@drawable/editextstyle"
-                android:paddingLeft="10dp"
-                android:lines="1"
-                android:maxLength="35" />
-
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:id="@+id/edad"
-                android:hint="Edad"
-                android:layout_below="@+id/apellidos"
-                android:layout_marginTop="10dp"
-                android:textColorHint="#000000"
-                android:background="@drawable/editextstyle"
-                android:paddingLeft="10dp"
-                android:inputType="number"
-                android:lines="1"
-                android:maxLength="3" />
-
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:inputType="date"
-                android:ems="10"
-                android:id="@+id/fecha"
-                android:hint="Fecha (dd/mm/aaaa)"
-                android:layout_below="@+id/edad"
-                android:layout_marginTop="10dp"
-                android:textColorHint="#000000"
-                android:background="@drawable/editextstyle"
-                android:paddingLeft="10dp"
-                android:lines="1"
-                android:maxLength="20" />
-
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:id="@+id/correo"
-                android:hint="Correo Electronico"
-                android:layout_below="@+id/fecha"
-                android:layout_marginTop="10dp"
-                android:textColorHint="#000000"
-                android:background="@drawable/editextstyle"
-                android:paddingLeft="10dp"
-                android:lines="1"
-                android:maxLength="30" />
-
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:id="@+id/pais"
-                android:hint="Pais"
-                android:layout_below="@+id/correo"
-                android:layout_marginTop="10dp"
-                android:textColorHint="#000000"
-                android:paddingLeft="10dp"
-                android:autoText="false"
-                android:background="@drawable/editextstyle"
-                android:lines="1"
-                android:maxLength="20" />
-
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:id="@+id/ciudad"
-                android:hint="Dirección(num calle, ciudad)"
-                android:layout_below="@+id/pais"
-                android:layout_marginTop="10dp"
-                android:textColorHint="#000000"
-                android:background="@drawable/editextstyle"
-                android:paddingLeft="10dp"
-                android:lines="1"
-                android:maxLength="30" />
-        </RelativeLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/registro2"
-        android:visibility="invisible">
-
-        <RelativeLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="0dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="0dp">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:id="@+id/seleccionRol"
-                    android:layout_marginTop="30dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Seleccione un rol"
-                        android:id="@+id/textView"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="25dp"
-                        android:layout_centerHorizontal="true"
-                        android:textColor="#000000" />
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView"
-                        android:id="@+id/opciones"
-                        android:layout_marginTop="10dp">
-
-                        <Spinner
-                            android:layout_width="200dp"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/selecOpciones"
-                            android:spinnerMode="dropdown"
-                            android:layout_alignParentStart="false" />
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/seleccionRol"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible">
-
-                    <RelativeLayout
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:visibility="invisible"
-                        android:layout_alignParentLeft="false"
-                        android:layout_alignParentTop="false"
-                        android:layout_alignParentRight="false"
-                        android:layout_alignWithParentIfMissing="false"
-                        android:layout_alignParentBottom="false"
-                        android:id="@+id/parteArtista">
-
-                        <EditText
-                            android:layout_width="200dp"
-                            android:layout_height="35dp"
-                            android:id="@+id/nomArtista"
-                            android:hint="Nombre Artista"
-                            android:textColorHint="#000000"
-                            android:background="@drawable/editextstyle"
-                            android:paddingLeft="10dp"
-                            android:maxLength="30"
-                            android:lines="1" />
-
-                        <EditText
-                            android:layout_width="200dp"
-                            android:layout_height="35dp"
-                            android:id="@+id/generos"
-                            android:hint="Generos"
-                            android:layout_below="@+id/nomArtista"
-                            android:layout_marginTop="10dp"
-                            android:textColorHint="#000000"
-                            android:background="@drawable/editextstyle"
-                            android:paddingLeft="10dp"
-                            android:maxLength="30"
-                            android:lines="1" />
-
-                        <EditText
-                            android:layout_width="200dp"
-                            android:layout_height="35dp"
-                            android:id="@+id/instru"
-                            android:hint="Instrumentos"
-                            android:layout_below="@+id/generos"
-                            android:layout_marginTop="10dp"
-                            android:textColorHint="#000000"
-                            android:background="@drawable/editextstyle"
-                            android:paddingLeft="10dp"
-                            android:lines="1"
-                            android:maxLength="30" />
-
-                        <EditText
-                            android:layout_width="200dp"
-                            android:layout_height="35dp"
-                            android:id="@+id/pagWeb"
-                            android:hint="Pagina Web"
-                            android:layout_below="@+id/instru"
-                            android:layout_marginTop="10dp"
-                            android:textColorHint="#000000"
-                            android:paddingLeft="10dp"
-                            android:background="@drawable/editextstyle"
-                            android:maxLength="30"
-                            android:lines="1" />
-
-                        <EditText
-                            android:layout_width="200dp"
-                            android:layout_height="35dp"
-                            android:id="@+id/precio"
-                            android:layout_below="@+id/pagWeb"
-                            android:layout_marginTop="10dp"
-                            android:textColorHint="#000000"
-                            android:hint="Precio"
-                            android:paddingLeft="10dp"
-                            android:background="@drawable/editextstyle"
-                            android:lines="1"
-                            android:maxLength="20" />
-                    </RelativeLayout>
-
-                </RelativeLayout>
-            </RelativeLayout>
-
-        </RelativeLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/registro3"
-        android:visibility="invisible">
-
-        <RelativeLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_centerInParent="true">
-
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:id="@+id/usu"
-                android:hint="Usuario"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:textColorHint="#000000"
-                android:background="@drawable/editextstyle"
-                android:paddingLeft="10dp"
-                android:maxLines="10"
-                android:lines="1" />
-
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:id="@+id/contra"
-                android:hint="Contraseña"
-                android:layout_below="@+id/usu"
-                android:layout_marginTop="10dp"
-                android:textColorHint="#000000"
-                android:paddingLeft="10dp"
-                android:background="@drawable/editextstyle"
-                android:lines="1"
-                android:maxLength="10" />
-
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:id="@+id/contra2"
-                android:hint="Repite Contraseña"
-                android:layout_below="@+id/contra"
-                android:layout_marginTop="10dp"
-                android:textColorHint="#000000"
-                android:paddingLeft="10dp"
-                android:background="@drawable/editextstyle"
-                android:maxLength="10"
-                android:lines="1" />
-
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:id="@+id/clave"
-                android:hint="Clave"
-                android:layout_below="@+id/contra2"
-                android:layout_marginTop="10dp"
-                android:textColorHint="#000000"
-                android:background="@drawable/editextstyle"
-                android:paddingLeft="10dp"
-                android:maxLength="10"
-                android:lines="1" />
-
-        </RelativeLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/olvidado"
-        android:visibility="invisible">
-
-        <RelativeLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_centerInParent="true">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Seleccione el metodo"
-                android:id="@+id/textView2"
-                android:layout_gravity="center_horizontal"
-                android:textSize="20dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:textColor="#000000" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView2"
-                android:id="@+id/olvidadoSeleccion"
-                android:layout_marginTop="10dp">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Clave"
-                    android:id="@+id/botonClave"
-                    android:background="@drawable/buttonstyle" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Correo"
-                    android:id="@+id/botonCorreo"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/buttonstyle" />
-            </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/olvidadoSeleccion">
-
-                <RelativeLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:id="@+id/layoutClave"
-                    android:visibility="invisible">
-
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="35dp"
-                        android:id="@+id/claveOlvidado"
-                        android:hint="Inserte la clave"
-                        android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="0dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginTop="0dp"
-                        android:textColorHint="#000000"
-                        android:background="@drawable/editextstyle"
-                        android:paddingLeft="10dp"
-                        android:maxLength="20"
-                        android:linksClickable="false"
-                        android:lines="1" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:id="@+id/layoutCorreo"
-                    android:visibility="invisible">
-
-                    <EditText
-                        android:layout_width="200dp"
-                        android:layout_height="35dp"
-                        android:id="@+id/correoOlvidado"
-                        android:hint="Inserte el correo"
-                        android:layout_alignParentLeft="true"
-                        android:layout_marginLeft="0dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginTop="0dp"
-                        android:textColorHint="#000000"
-                        android:paddingLeft="10dp"
-                        android:background="@drawable/editextstyle"
-                        android:lines="1"
-                        android:maxLength="20" />
-                </RelativeLayout>
-            </RelativeLayout>
-
-        </RelativeLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:id="@+id/seccionDerecha"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/botonRegistro"
-            android:src="@drawable/registropeq"
-            android:scaleType="fitCenter"
-            android:background="@null" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/botonPag2"
-            android:visibility="invisible"
-            android:src="@drawable/siguientepeq"
-            android:scaleType="fitCenter"
-            android:background="@null" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/botonPag3"
-            android:background="@null"
-            android:visibility="invisible"
-            android:src="@drawable/siguientepeq"
-            android:scaleType="fitCenter" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/botonFinalizar"
-            android:visibility="invisible"
-            android:scaleType="fitCenter"
-            android:src="@drawable/finalizarpeq"
-            android:background="@null" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/botonEnviar"
-            android:background="@null"
-            android:visibility="invisible"
-            android:src="@drawable/enviarpeq"
-            android:scaleType="fitCenter" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:id="@+id/seccionIzquierda"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp">
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/botonAtras"
-            android:background="@null"
-            android:visibility="invisible"
-            android:scaleType="fitCenter"
-            android:src="@drawable/atraspeq" />
-    </RelativeLayout>
 </RelativeLayout>

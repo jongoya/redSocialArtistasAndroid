@@ -2,26 +2,17 @@ package com.gestor.jonny.red.artista;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.Point;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.gestor.jonny.red.R;
-import com.gestor.jonny.red.commons.Commons;
+import com.gestor.jonny.red.Commons.Commons;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

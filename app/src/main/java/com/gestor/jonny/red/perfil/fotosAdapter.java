@@ -3,7 +3,6 @@ package com.gestor.jonny.red.perfil;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,8 @@ import android.widget.ImageView;
 
 import com.gestor.jonny.red.R;
 import com.gestor.jonny.red.SQLite.SqliteManager;
-import com.gestor.jonny.red.commons.Commons;
+import com.gestor.jonny.red.Commons.Commons;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 /**

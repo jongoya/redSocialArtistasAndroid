@@ -7,11 +7,10 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.gestor.jonny.red.R;
-import com.gestor.jonny.red.commons.Commons;
+import com.gestor.jonny.red.Commons.Commons;
 
 import java.util.ArrayList;
 

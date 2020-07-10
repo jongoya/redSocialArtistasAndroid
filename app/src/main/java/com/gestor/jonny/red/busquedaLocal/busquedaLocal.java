@@ -14,7 +14,7 @@ import com.gestor.jonny.red.R;
 import com.gestor.jonny.red.artista.ArtistasAdapter;
 import com.gestor.jonny.red.artista.artistaItem;
 import com.gestor.jonny.red.artista.perfilArtista;
-import com.gestor.jonny.red.commons.Commons;
+import com.gestor.jonny.red.Commons.Commons;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import java.util.ArrayList;

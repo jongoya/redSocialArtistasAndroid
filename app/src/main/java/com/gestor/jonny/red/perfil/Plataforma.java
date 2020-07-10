@@ -46,9 +46,11 @@ import com.gestor.jonny.red.R;
 import com.gestor.jonny.red.artista.artistaItem;
 import com.gestor.jonny.red.busquedaGlobal.busquedaGlobal;
 import com.gestor.jonny.red.busquedaLocal.busquedaLocal;
-import com.gestor.jonny.red.commons.Commons;
+import com.gestor.jonny.red.Commons.Commons;
+import com.gestor.jonny.red.Commons.Constants;
+import com.gestor.jonny.red.Commons.Preferencias;
 import com.gestor.jonny.red.editar.editarPerfil;
-import com.gestor.jonny.red.login.MainActivity;
+import com.gestor.jonny.red.Login.LoginActivity;
 import com.gestor.jonny.red.mensajes.mensajeria;
 import com.gestor.jonny.red.artista.perfilArtista;
 import com.google.android.youtube.player.YouTubeBaseActivity;
@@ -61,8 +63,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.OnInitializedListener{
-    public static String URL_LOCALHOST = "http://www.djmrbug.com/artistas/";
+public class Plataforma extends YouTubeBaseActivity implements  YouTubePlayer.OnInitializedListener{
     private YouTubePlayerView youTubeView;
     private YouTubePlayer youtubePlayer;
     String nombre = "";
@@ -218,7 +219,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
 
-        progress = ProgressDialog.show(plataforma.this, "Cargando Perfil", " Unos segundos", true);
+        progress = ProgressDialog.show(Plataforma.this, "Cargando Perfil", " Unos segundos", true);
 
         recogerImagenes();
 
@@ -245,7 +246,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0){
-                    Intent myIntent = new Intent(plataforma.this, busquedaLocal.class);
+                    Intent myIntent = new Intent(Plataforma.this, busquedaLocal.class);
                     myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     myIntent.putExtra("ciudad", ciudad);
                     myIntent.putExtra("usuario", usuario);
@@ -253,19 +254,19 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
                     getApplicationContext().startActivity(myIntent);
                     menuLayout.startAnimation(outToRightAnimation(R.id.menuLayout));
                 }else if(position == 1){
-                    Intent myIntent = new Intent(plataforma.this, busquedaGlobal.class);
+                    Intent myIntent = new Intent(Plataforma.this, busquedaGlobal.class);
                     myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     myIntent.putExtra("usuario", usuario);
                     getApplicationContext().startActivity(myIntent);
                     menuLayout.startAnimation(outToRightAnimation(R.id.menuLayout));
                 }else if(position == 2){
-                    Intent myIntent = new Intent(plataforma.this, mensajeria.class);
+                    Intent myIntent = new Intent(Plataforma.this, mensajeria.class);
                     myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     myIntent.putExtra("usuario", usuario);
                     getApplicationContext().startActivity(myIntent);
                     menuLayout.startAnimation(outToRightAnimation(R.id.menuLayout));
                 }else if(position == 3){
-                    Intent myIntent = new Intent(plataforma.this, editarPerfil.class);
+                    Intent myIntent = new Intent(Plataforma.this, editarPerfil.class);
                     myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     myIntent.putExtra("usuario", usuario);
                     myIntent.putExtra("nombre", nombre);
@@ -285,8 +286,8 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
                     getApplicationContext().startActivity(myIntent);
                     menuLayout.startAnimation(outToRightAnimation(R.id.menuLayout));
                 }else if(position == 4){
-                    Commons.removePreferencias(getApplicationContext());
-                    Intent myIntent = new Intent(plataforma.this, MainActivity.class);
+                    Preferencias.removeUserCredentials(getApplicationContext());
+                    Intent myIntent = new Intent(Plataforma.this, LoginActivity.class);
                     myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     getApplicationContext().startActivity(myIntent);
                     finish();
@@ -302,7 +303,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String nombreUsu = artistaFormulario.get(position).getUsuario();
-                Intent myIntent = new Intent(plataforma.this, perfilArtista.class);
+                Intent myIntent = new Intent(Plataforma.this, perfilArtista.class);
                 myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 myIntent.putExtra("usuario", nombreUsu);
                 myIntent.putExtra("usuarioSesion", usuario);
@@ -314,7 +315,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 artistaFormulario.removeAll(artistaFormulario);
-                adapterFormulario = new ArtistasAdapter(getApplicationContext(), artistaFormulario, plataforma.this);
+                adapterFormulario = new ArtistasAdapter(getApplicationContext(), artistaFormulario, Plataforma.this);
                 listaAr.setAdapter(adapterFormulario);
             }
 
@@ -382,7 +383,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
                 infoGaleria.setVisibility(View.INVISIBLE);
                 infoVideos.setVisibility(View.INVISIBLE);
                 RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) indicador.getLayoutParams();
-                par.setMargins(Commons.dpToPx(25,plataforma.this), Commons.dpToPx(36,plataforma.this), 0, 0);
+                par.setMargins(Commons.dpToPx(25, Plataforma.this), Commons.dpToPx(36, Plataforma.this), 0, 0);
                 par.width = perfilUsuario.getText().length()*20;
                 indicador.setLayoutParams(par);
             }
@@ -394,7 +395,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
                 infoGaleria.setVisibility(View.VISIBLE);
                 infoVideos.setVisibility(View.INVISIBLE);
                 RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) indicador.getLayoutParams();
-                par.setMargins(Commons.getScreenWidth(getApplicationContext(), plataforma.this)/2- Commons.dpToPx(15,plataforma.this), Commons.dpToPx(36,plataforma.this), 0, 0);
+                par.setMargins(Commons.getScreenWidth(getApplicationContext(), Plataforma.this)/2- Commons.dpToPx(15, Plataforma.this), Commons.dpToPx(36, Plataforma.this), 0, 0);
                 par.width = galeriaUsuario.getText().length()*20;
                 indicador.setLayoutParams(par);
             }
@@ -406,7 +407,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
                 infoGaleria.setVisibility(View.INVISIBLE);
                 infoVideos.setVisibility(View.VISIBLE);
                 RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) indicador.getLayoutParams();
-                par.setMargins(Commons.getScreenWidth(getApplicationContext(), plataforma.this) - Commons.dpToPx(40,plataforma.this), Commons.dpToPx(36,plataforma.this), 0, 0);
+                par.setMargins(Commons.getScreenWidth(getApplicationContext(), Plataforma.this) - Commons.dpToPx(40, Plataforma.this), Commons.dpToPx(36, Plataforma.this), 0, 0);
                 par.width = videosUsuario.getText().length()*20;
                 indicador.setLayoutParams(par);
             }
@@ -718,7 +719,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
         }
         progress.dismiss();
         urlImagenes.add("upload.png");
-        gridview.setAdapter(new fotosAdapter(getApplicationContext(), urlImagenes, plataforma.this));
+        gridview.setAdapter(new fotosAdapter(getApplicationContext(), urlImagenes, Plataforma.this));
     }
 
     private void inicializarYoutube(){
@@ -731,7 +732,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
             @Override
             public void run() {
                 final Bitmap img = SqliteManager.loadImageFromStorage(url);
-                plataforma.this.runOnUiThread(new Runnable() {
+                Plataforma.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         imagen.setImageBitmap(img);
@@ -1271,7 +1272,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
                         buffer.delete(0,buffer.length());
                     }
                 }
-                plataforma.this.runOnUiThread(new Runnable() {
+                Plataforma.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         scrollRecorrido.addView(viewPrincipal);
@@ -1434,10 +1435,10 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
 
     public void consultaArtistas(){
         if(Commons.isOnline(this)){
-            progress = ProgressDialog.show(plataforma.this, "Cargando Artistas",
+            progress = ProgressDialog.show(Plataforma.this, "Cargando Artistas",
                     " Unos segundos", true);
             Map<String, String> params = new HashMap<String, String>();
-            String url = URL_LOCALHOST + "formularioArtistas.php";
+            String url = Constants.URL_LOCALHOST + "formularioArtistas.php";
             params.put("usu", usuario);
             /*JsonArrayRequest request = new JsonArrayRequest(Request.Method.POST,url, new JSONObject(params),
                     new Response.Listener<JSONArray>() {
@@ -1495,10 +1496,10 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
 
     private void actualizarPortada(String urlPortada, final String urlImagen){
         if(Commons.isOnline(this)){
-            progress = ProgressDialog.show(plataforma.this, "Actualizando portada",
+            progress = ProgressDialog.show(Plataforma.this, "Actualizando portada",
                     " Unos segundos", true);
             Map<String, String> params = new HashMap();
-            String endPoint = URL_LOCALHOST + "cambiarPortada.php";
+            String endPoint = Constants.URL_LOCALHOST + "cambiarPortada.php";
             String link = "imagenesSubidas/"+urlImagen;
             final String linkImgPortada = Commons.eliminarRuta(urlPortada);
             params.put("usu", usuario);
@@ -1557,10 +1558,10 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
     }
     private void actualizarArtista(String urlArtista, final String urlImagen){
         if(Commons.isOnline(this)){
-            progress = ProgressDialog.show(plataforma.this, "Actualizando imagen",
+            progress = ProgressDialog.show(Plataforma.this, "Actualizando imagen",
                     " Unos segundos", true);
             Map<String, String> params = new HashMap();
-            String endPoint = URL_LOCALHOST + "cambiarArtista.php";
+            String endPoint = Constants.URL_LOCALHOST + "cambiarArtista.php";
             String link = "imagenesSubidas/"+urlImagen;
             final String linkImgArtista = Commons.eliminarRuta(urlArtista);
             params.put("usu", usuario);
@@ -1619,10 +1620,10 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
     }
     private void actualizarYoutube( final String enlace) {
         if(Commons.isOnline(this)){
-            progress = ProgressDialog.show(plataforma.this, "Actualizando enlace",
+            progress = ProgressDialog.show(Plataforma.this, "Actualizando enlace",
                     " Unos segundos", true);
             Map<String, String> params = new HashMap();
-            String endPoint = URL_LOCALHOST + "enlaceYoutube.php";
+            String endPoint = Constants.URL_LOCALHOST + "enlaceYoutube.php";
             params.put("usu", usuario);
             params.put("enlace", enlace);
             /*JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, endPoint, new JSONObject(params),
@@ -1659,10 +1660,10 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
     }
     private void actualizarRedes( final String enlace) {
         if(Commons.isOnline(this)){
-            progress = ProgressDialog.show(plataforma.this, "Actualizando redes",
+            progress = ProgressDialog.show(Plataforma.this, "Actualizando redes",
                     " Unos segundos", true);
             Map<String, String> params = new HashMap();
-            String endPoint = URL_LOCALHOST + "enlaceRedes.php";
+            String endPoint = Constants.URL_LOCALHOST + "enlaceRedes.php";
             params.put("usu", usuario);
             params.put("enlace", enlace);
             /*JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, endPoint, new JSONObject(params),
@@ -1700,7 +1701,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
     private void recargarDatos(){
         if(Commons.isOnline(this)){
             Map<String, String> params = new HashMap();
-            String endPoint = URL_LOCALHOST + "recargarDatos.php";
+            String endPoint = Constants.URL_LOCALHOST + "recargarDatos.php";
             params.put("usuario", usuario);
             /*JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,endPoint, new JSONObject(params),
                     new Response.Listener<JSONObject>() {
@@ -1749,10 +1750,10 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
 
     private void actualizarTitulo(final String url, final String titulo, final int pos){
         if(Commons.isOnline(this)){
-            progress = ProgressDialog.show(plataforma.this, "Actualizando datos",
+            progress = ProgressDialog.show(Plataforma.this, "Actualizando datos",
                     " Unos segundos", true);
             Map<String, String> params = new HashMap();
-            String endPoint = URL_LOCALHOST + "modificarImagen.php";
+            String endPoint = Constants.URL_LOCALHOST + "modificarImagen.php";
             String link = "imagenesSubidas/"+url;
             params.put("usu", usuario);
             params.put("url", link);
@@ -1794,10 +1795,10 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
     }
     private void eliminarImagen(final String url){
         if(Commons.isOnline(this)){
-            progress = ProgressDialog.show(plataforma.this, "Eliminando imagen",
+            progress = ProgressDialog.show(Plataforma.this, "Eliminando imagen",
                     " Unos segundos", true);
             Map<String, String> params = new HashMap();
-            String endPoint = URL_LOCALHOST + "eliminarArchivo.php";
+            String endPoint = Constants.URL_LOCALHOST + "eliminarArchivo.php";
             String link = "imagenesSubidas/"+url;
             params.put("usu", usuario);
             params.put("url", link);
@@ -1851,7 +1852,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
 
     public void subidaImagenNueva(final Bitmap imagen, final String numero, final String titulo){
         if(Commons.isOnline(this)){
-            progress = ProgressDialog.show(plataforma.this, "Guardando imagen",
+            progress = ProgressDialog.show(Plataforma.this, "Guardando imagen",
                     " Unos segundos", true);
             Map<String, String> params = new HashMap<String, String>();
 
@@ -1868,7 +1869,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
             byte[] byte_arr2 = out2.toByteArray();
             String img2 = Base64.encodeToString(byte_arr2, 0);
 
-            String url = URL_LOCALHOST + "imagenNueva.php";
+            String url = Constants.URL_LOCALHOST + "imagenNueva.php";
             params.put("imagen", img);
             params.put("imagenPeque", img2);
             params.put("usuario", usuario);
@@ -1938,7 +1939,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
 
     public void subidaImagenPortada(final Bitmap imagen){
         if(Commons.isOnline(this)){
-            progress = ProgressDialog.show(plataforma.this, "Guardando imagen",
+            progress = ProgressDialog.show(Plataforma.this, "Guardando imagen",
                     " Unos segundos", true);
             Map<String, String> params = new HashMap<String, String>();
 
@@ -1955,7 +1956,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
             byte[] byte_arr2 = out2.toByteArray();
             String img2 = Base64.encodeToString(byte_arr2, 0);
 
-            String url = URL_LOCALHOST + "imagenPortada.php";
+            String url = Constants.URL_LOCALHOST + "imagenPortada.php";
             params.put("imagen", img);
             params.put("imagenPeque", img2);
             params.put("usuario", usuario);
@@ -2029,7 +2030,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
 
     public void subidaImagenArtista(final Bitmap imagen){
         if(Commons.isOnline(this)){
-            progress = ProgressDialog.show(plataforma.this, "Guardando imagen",
+            progress = ProgressDialog.show(Plataforma.this, "Guardando imagen",
                     " Unos segundos", true);
             Map<String, String> params = new HashMap<String, String>();
 
@@ -2046,7 +2047,7 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
             byte[] byte_arr2 = out2.toByteArray();
             String img2 = Base64.encodeToString(byte_arr2, 0);
 
-            String url = URL_LOCALHOST + "imagenArtista.php";
+            String url = Constants.URL_LOCALHOST + "imagenArtista.php";
             params.put("imagen", img);
             params.put("imagenPeque", img2);
             params.put("usuario", usuario);
@@ -2118,10 +2119,10 @@ public class plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
 
     public void guardarRecorrido(String recorrido){
         if(Commons.isOnline(this)){
-            progress = ProgressDialog.show(plataforma.this, "Actualizando recorrido",
+            progress = ProgressDialog.show(Plataforma.this, "Actualizando recorrido",
                     " Unos segundos", true);
             Map<String, String> params = new HashMap<String, String>();
-            String url = URL_LOCALHOST + "guardarRecorrido.php";
+            String url = Constants.URL_LOCALHOST + "guardarRecorrido.php";
             params.put("usu",usuario);
             params.put("recorrido",recorrido);
             /*JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST,url, new JSONObject(params),
