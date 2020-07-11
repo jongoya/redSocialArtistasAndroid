@@ -5,11 +5,15 @@ import java.io.Serializable;
 public class EstiloModel implements Serializable {
 
     private String nombre = "";
-    private long id = 0;
+    private long estiloId = 0;
 
-    public EstiloModel(String nombre, long id) {
+    public EstiloModel(String nombre, long estiloId) {
         this.nombre = nombre;
-        this.id = id;
+        this.estiloId = estiloId;
+    }
+
+    public EstiloModel() {
+
     }
 
     public String getNombre() {
@@ -21,10 +25,10 @@ public class EstiloModel implements Serializable {
     }
 
     public long getId() {
-        return id;
+        return estiloId;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.estiloId = id;
     }
 }

@@ -7,6 +7,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.gestor.jonny.red.Commons.Commons;
+import com.gestor.jonny.red.Commons.Constants;
 import com.gestor.jonny.red.Models.EstiloModel;
 import com.gestor.jonny.red.Models.InstrumentoModel;
 import com.gestor.jonny.red.Models.RolModel;
@@ -46,7 +47,7 @@ public class RegistroProfesionalActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.rolLayout) void didClickRol() {
-        ArrayList<RolModel> rols = Commons.getOpcionesRol();
+        ArrayList<RolModel> rols = Constants.databaseManager.rolManager.getAllRols();
         openListSelectorActivity(rolRequest, convertRolsToSelectorObjects(rols), false);
     }
 
@@ -55,12 +56,12 @@ public class RegistroProfesionalActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.instrumentoLayout) void didClickInstrumento() {
-        ArrayList<InstrumentoModel> instrumentos = Commons.getInstrumentos();
+        ArrayList<InstrumentoModel> instrumentos = Constants.databaseManager.instrumentoManager.getAllInstrumentos();
         openListSelectorActivity(instrumentoRequest, convertInstrumentosToSelectorObjects(instrumentos), true);
     }
 
     @OnClick(R.id.estiloLayout) void didClickEstilo() {
-        ArrayList<EstiloModel> estilos = Commons.getEstilos();
+        ArrayList<EstiloModel> estilos = Constants.databaseManager.estiloManager.getAllEstilos();
         openListSelectorActivity(estiloRequest, convertEstilosToSelectorObjects(estilos), true);
     }
 
@@ -140,7 +141,7 @@ public class RegistroProfesionalActivity extends AppCompatActivity {
     }
 
     private RolModel convertListSelectorToRol(ListSelectorModel option) {
-        ArrayList<RolModel> rols = Commons.getOpcionesRol();
+        ArrayList<RolModel> rols = Constants.databaseManager.rolManager.getAllRols();
         for (int i = 0; i < rols.size(); i++) {
             if (rols.get(i).getId() == option.getId()) {
                 return rols.get(i);
@@ -151,7 +152,7 @@ public class RegistroProfesionalActivity extends AppCompatActivity {
     }
 
     private ArrayList<InstrumentoModel> getInstrumentosFromOptions(ArrayList<ListSelectorModel> options) {
-        ArrayList<InstrumentoModel> instrumentos = Commons.getInstrumentos();
+        ArrayList<InstrumentoModel> instrumentos = Constants.databaseManager.instrumentoManager.getAllInstrumentos();
         ArrayList<InstrumentoModel> results = new ArrayList<>();
 
         for (ListSelectorModel option: options) {
@@ -166,7 +167,7 @@ public class RegistroProfesionalActivity extends AppCompatActivity {
     }
 
     private ArrayList<EstiloModel> getEstilosFromOptions(ArrayList<ListSelectorModel> options) {
-        ArrayList<EstiloModel> estilos = Commons.getEstilos();
+        ArrayList<EstiloModel> estilos = Constants.databaseManager.estiloManager.getAllEstilos();
         ArrayList<EstiloModel> results = new ArrayList<>();
 
         for (ListSelectorModel option: options) {

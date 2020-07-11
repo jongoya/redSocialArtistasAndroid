@@ -5,11 +5,15 @@ import java.io.Serializable;
 public class InstrumentoModel implements Serializable {
 
     private String nombre = "";
-    private long id = 0;
+    private long instrumentoId = 0;
 
-    public InstrumentoModel(String nombre, long id) {
+    public InstrumentoModel(String nombre, long instrumentoId) {
         this.nombre = nombre;
-        this.id = id;
+        this.instrumentoId = instrumentoId;
+    }
+
+    public InstrumentoModel() {
+
     }
 
     public String getNombre() {
@@ -21,10 +25,10 @@ public class InstrumentoModel implements Serializable {
     }
 
     public long getId() {
-        return id;
+        return instrumentoId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long instrumentoId) {
+        this.instrumentoId = instrumentoId;
     }
 }

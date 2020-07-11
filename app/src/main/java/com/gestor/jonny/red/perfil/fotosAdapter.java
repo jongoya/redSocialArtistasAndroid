@@ -62,14 +62,14 @@ public class fotosAdapter extends BaseAdapter {
 
     //PICASSO!!!!!
     public void descargarImagen(String url, final ImageView imagen){
-        final Bitmap img = SqliteManager.loadImageFromStorage(url);
+        //final Bitmap img = SqliteManager.loadImageFromStorage(url);
         //Llamamos al main thread para modificar el contenido del view
-        actividad.runOnUiThread(new Runnable() {
+        /*actividad.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 imagen.setImageBitmap(img);
             }
-        });
+        });*/
     }
 
     private void hiloDeDescarga(final String url, final ImageView imagen){

@@ -4,11 +4,15 @@ import java.io.Serializable;
 
 public class RolModel implements Serializable {
     private String nombre = "";
-    private long id = 0;
+    private long rolId = 0;
 
-    public RolModel(String nombre, long id) {
+    public RolModel(String nombre, long rolId) {
         this.nombre = nombre;
-        this.id = id;
+        this.rolId = rolId;
+    }
+
+    public RolModel() {
+
     }
 
     public String getNombre() {
@@ -20,10 +24,10 @@ public class RolModel implements Serializable {
     }
 
     public long getId() {
-        return id;
+        return rolId;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.rolId = id;
     }
 }

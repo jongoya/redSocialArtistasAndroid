@@ -703,18 +703,18 @@ public class Plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
     }
 
     private void recogerImagenes(){
-        objetosImagenes = SqliteManager.recojerImagenes(db);
+        //objetosImagenes = SqliteManager.recojerImagenes(db);
         for (int i = 0; i < objetosImagenes.size(); i++) {
             urlImagenes.add(objetosImagenes.get(i).getUrl());
             titulosImagenes.add(objetosImagenes.get(i).getTitulo());
             if(objetosImagenes.get(i).getPortada().equals("true")){
                 posPortada = i;
                 ImageView foto = (ImageView)findViewById(R.id.fotoPerfil);
-                foto.setImageBitmap(SqliteManager.loadImageFromStorage(objetosImagenes.get(i).getUrl()));
+                //foto.setImageBitmap(SqliteManager.loadImageFromStorage(objetosImagenes.get(i).getUrl()));
             }else if(objetosImagenes.get(i).getArtista().equals("true")){
                 posArtista = i;
                 ImageView foto = (ImageView)findViewById(R.id.fotoArtista);
-                foto.setImageBitmap(SqliteManager.loadImageFromStorage(objetosImagenes.get(i).getUrl()));
+                //foto.setImageBitmap(SqliteManager.loadImageFromStorage(objetosImagenes.get(i).getUrl()));
             }
         }
         progress.dismiss();
@@ -731,13 +731,13 @@ public class Plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
         Thread thread = new Thread() {
             @Override
             public void run() {
-                final Bitmap img = SqliteManager.loadImageFromStorage(url);
+                /*final Bitmap img = SqliteManager.loadImageFromStorage(url);
                 Plataforma.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         imagen.setImageBitmap(img);
                     }
-                });
+                });*/
             }
         };
         thread.start();
@@ -977,7 +977,7 @@ public class Plataforma extends YouTubeBaseActivity implements  YouTubePlayer.On
 
     private void saveUploadImg(){
         Bitmap bit = BitmapFactory.decodeResource(getResources(), R.drawable.upload);
-        SqliteManager.saveUploadImage(getApplicationContext(),"uploadMini.png", bit);
+        //SqliteManager.saveUploadImage(getApplicationContext(),"uploadMini.png", bit);
     }
 
     public void checkearImagenesPerfil(){

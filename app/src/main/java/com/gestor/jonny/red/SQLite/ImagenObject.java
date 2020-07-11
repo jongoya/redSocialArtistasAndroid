@@ -2,6 +2,8 @@ package com.gestor.jonny.red.SQLite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+//TODO eliminar clase
 public class ImagenObject extends AppCompatActivity {
     String url;
     String titulo;

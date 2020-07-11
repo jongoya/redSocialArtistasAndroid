@@ -16,26 +16,43 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
+//TODO eliminar clase
 public class SqliteManager extends SQLiteOpenHelper {
     private static String imageDir = "imageDir";
     private static String APP_FILEDIR = "/data/data/com.gestor.jonny.red/app_imageDir";
-    String sqlCreate = "CREATE TABLE imagenes (url TEXT, titulo TEXT, portada TEXT, artista TEXT)";
+
+    //String sqlCreate = "CREATE TABLE imagenes (url TEXT, titulo TEXT, portada TEXT, artista TEXT)";
 
     public SqliteManager(Context contexto, String nombre, SQLiteDatabase.CursorFactory factory, int version) {
         super(contexto, nombre, factory, version);
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(sqlCreate);
+        //db.execSQL(sqlCreate);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS Usuarios");
-        db.execSQL(sqlCreate);
+        //db.execSQL(sqlCreate);
     }
 
-    public static ArrayList recojerImagenes(SQLiteDatabase db){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*public static ArrayList recojerImagenes(SQLiteDatabase db){
         ArrayList<ImagenObject> imagenes = new ArrayList<>();
         Cursor c = db.rawQuery(" SELECT * FROM imagenes", null);
         while (c.moveToNext()){
@@ -47,9 +64,9 @@ public class SqliteManager extends SQLiteOpenHelper {
             imagenes.add(imagen);
         }
         return imagenes;
-    }
+    }*/
 
-    public static boolean anadirImagen(ImagenObject imagen, SQLiteDatabase db, Context contexto, Bitmap bitmap){
+    /*public static boolean anadirImagen(ImagenObject imagen, SQLiteDatabase db, Context contexto, Bitmap bitmap){
         ContentValues nuevoRegistro = new ContentValues();
         nuevoRegistro.put("url", imagen.getUrl());
         nuevoRegistro.put("titulo",imagen.getTitulo());
@@ -82,9 +99,9 @@ public class SqliteManager extends SQLiteOpenHelper {
             return true;
         }
         return false;
-    }
+    }*/
 
-    public static boolean setArtista(String urlImagen, String urlArtista, SQLiteDatabase db){
+    /*public static boolean setArtista(String urlImagen, String urlArtista, SQLiteDatabase db){
         ContentValues valores = new ContentValues();
         valores.put("artista","false");
         int res = 0;
@@ -105,8 +122,8 @@ public class SqliteManager extends SQLiteOpenHelper {
         }else{
             return false;
         }
-    }
-    public static boolean setPortada(String urlImagen, String urlPortada, SQLiteDatabase db){
+    }*/
+    /*public static boolean setPortada(String urlImagen, String urlPortada, SQLiteDatabase db){
         ContentValues valores = new ContentValues();
         valores.put("portada","false");
         int res = 0;
@@ -127,9 +144,9 @@ public class SqliteManager extends SQLiteOpenHelper {
         }else{
             return false;
         }
-    }
+    }*/
 
-    public static String saveImage(Context contexto, String url, Bitmap bitmap){
+    /*public static String saveImage(Context contexto, String url, Bitmap bitmap){
         ContextWrapper cw = new ContextWrapper(contexto.getApplicationContext());
         File directory = cw.getDir(imageDir, Context.MODE_PRIVATE);
         File mypath=new File(directory,url);
@@ -148,9 +165,9 @@ public class SqliteManager extends SQLiteOpenHelper {
             }
         }
         return directory.getAbsolutePath();
-    }
+    }*/
 
-    public static String saveImageMini(Context contexto, String url, Bitmap bitmap){
+    /*public static String saveImageMini(Context contexto, String url, Bitmap bitmap){
         ContextWrapper cw = new ContextWrapper(contexto.getApplicationContext());
         File directory = cw.getDir(imageDir, Context.MODE_PRIVATE);
         File mypath=new File(directory, Commons.getImagenMini(url));
@@ -169,10 +186,10 @@ public class SqliteManager extends SQLiteOpenHelper {
             }
         }
         return directory.getAbsolutePath();
-    }
+    }*/
 
 
-    public static String saveUploadImage(Context contexto, String url, Bitmap bitmap){
+    /*public static String saveUploadImage(Context contexto, String url, Bitmap bitmap){
         ContextWrapper cw = new ContextWrapper(contexto.getApplicationContext());
         File directory = cw.getDir(imageDir, Context.MODE_PRIVATE);
         File mypath=new File(directory,url);
@@ -190,9 +207,9 @@ public class SqliteManager extends SQLiteOpenHelper {
             }
         }
         return directory.getAbsolutePath();
-    }
+    }*/
 
-    private static boolean removeImage(String url){
+    /*private static boolean removeImage(String url){
         File file = new File(APP_FILEDIR, url);
         File fileMini = new File(APP_FILEDIR, Commons.getImagenMini(url));
         boolean first = file.delete();
@@ -202,12 +219,12 @@ public class SqliteManager extends SQLiteOpenHelper {
         }else{
             return  false;
         }
-    }
+    }*/
 
-    public static Bitmap loadImageFromStorage(String url) {
+    /*public static Bitmap loadImageFromStorage(String url) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 1;
         final Bitmap b = BitmapFactory.decodeFile(APP_FILEDIR+"/"+url, options);
         return b;
-    }
+    }*/
 }
