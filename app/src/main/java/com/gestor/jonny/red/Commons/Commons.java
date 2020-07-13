@@ -9,7 +9,9 @@ import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.DisplayMetrics;
+import android.widget.RelativeLayout;
 
+import com.gestor.jonny.red.Commons.Views.LoadingStateView;
 import com.gestor.jonny.red.Models.EstiloModel;
 import com.gestor.jonny.red.Models.InstrumentoModel;
 import com.gestor.jonny.red.Models.RolModel;
@@ -215,5 +217,11 @@ public class Commons extends Application {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(timestamp * 1000);
         return sf.format(calendar.getTime());
+    }
+
+    public static RelativeLayout createLoadingStateView(Context context, String descripcion) {
+        LoadingStateView loadingState = new LoadingStateView(context, descripcion);
+
+        return loadingState;
     }
 }

@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:label="@string/app_name" android:name=".perfil.Plataforma"/>
+        <activity android:label="@string/app_name" android:name=".Plataforma.Plataforma"/>
         <activity android:label="@string/app_name" android:name=".Login.LoginActivity"/>
         <activity android:label="@string/app_name" android:name=".busquedaLocal.busquedaLocal"/>
         <activity android:label="@string/app_name" android:name=".busquedaGlobal.busquedaGlobal"/>

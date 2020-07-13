@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/colores2">
+    <RelativeLayout
+        android:id="@+id/perfil"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/actionBar"
+        android:layout_alignParentStart="false"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/fotoPortada"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/loading"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/fotoPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:alpha="0.4"
+                        android:background="#ffffff"></RelativeLayout>
+
+                    <Button
+                        android:id="@+id/perfilUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="false"
+                        android:background="@null"
+                        android:text="Perfil" />
+
+                    <Button
+                        android:id="@+id/galeriaUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@null"
+                        android:text="Galeria" />
+
+                    <Button
+                        android:id="@+id/videosUsuario"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="30dp"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/mas"
+                        android:text="Mas" />
+
+                    <RelativeLayout
+                        android:id="@+id/indicadorPlataforma"
+                        android:layout_width="40dp"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="false"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="35dp"
+                        android:background="#5AF97F"></RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/fotoPortada"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:id="@+id/scrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/infoPerfil"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <Button
+                                android:id="@+id/botonPersonal"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/buttonstyle"
+                                android:text="Informacion Personal" />
+
+                            <RelativeLayout
+                                android:id="@+id/personal"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_below="@+id/botonPersonal"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:id="@+id/textosPersonal"
+                                        android:layout_width="100dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="left"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/textView3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Nombre:"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/textView4"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/textView3"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Apellidos:"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/textView5"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/textView4"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Edad:"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/textView6"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/textView5"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Fecha:"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/textView7"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/textView6"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Correo:"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/textView8"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/textView7"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Pais:"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/textView9"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/textView8"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Ciudad:"
+                                            android:textColor="#000000" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/datosPersonal"
+                                        android:layout_width="150dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_toRightOf="@+id/textosPersonal"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/personalNombre"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="feo"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/personalApe"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/personalNombre"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="feo"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/personalEdad"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/personalApe"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="feo"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/personalFecha"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/personalEdad"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="feo"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/personalCorreo"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/personalFecha"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="feo"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/personalPais"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/personalCorreo"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="feo"
+                                            android:textColor="#000000" />
+
+                                        <TextView
+                                            android:id="@+id/personalCiudad"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/personalPais"
+                                            android:layout_gravity="center_horizontal"
+                                            android:layout_marginTop="10dp"
+                                            android:text="feo"
+                                            android:textColor="#000000" />
+                                    </RelativeLayout>
+                                </RelativeLayout>
+                            </RelativeLayout>
+
+                            <Button
+                                android:id="@+id/botonProfesional"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_below="@+id/personal"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/buttonstyle"
+                                android:text="Informacion Profesional" />
+
+                            <RelativeLayout
+                                android:id="@+id/profesional"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_below="@+id/botonProfesional"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:id="@+id/imagenProfesional"
+                                        android:layout_width="175dp"
+                                        android:layout_height="175dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:orientation="vertical">
+
+                                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:id="@+id/fotoArtista"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:src="@drawable/loading"
+                                            app:civ_border_color="#A8A8A8"
+                                            app:civ_border_width="0dp" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/inforProfesional"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imagenProfesional"
+                                        android:layout_centerHorizontal="true"
+                                        android:orientation="horizontal">
+
+                                        <RelativeLayout
+                                            android:id="@+id/textosProfesional"
+                                            android:layout_width="120dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_alignParentLeft="true"
+                                            android:layout_alignParentTop="true"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/textNombreBar"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginTop="10dp"
+                                                android:text="Nombre Artistico:"
+                                                android:textColor="#000000" />
+
+                                            <TextView
+                                                android:id="@+id/textGeneroBar"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/textNombreBar"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginTop="10dp"
+                                                android:text="Generos:"
+                                                android:textColor="#000000" />
+
+                                            <TextView
+                                                android:id="@+id/textPagWebBar"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/textGeneroBar"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginTop="10dp"
+                                                android:text="Instrumentos:"
+                                                android:textColor="#000000" />
+
+                                            <TextView
+                                                android:id="@+id/textDirec"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/textPagWebBar"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginTop="10dp"
+                                                android:text="Pagina Web:"
+                                                android:textColor="#000000" />
+
+                                            <TextView
+                                                android:id="@+id/textPrecio"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/textDirec"
+                                                android:layout_marginTop="10dp"
+                                                android:text="Precio:"
+                                                android:textColor="#000000" />
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/informacionProfesional"
+                                            android:layout_width="120dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_toRightOf="@+id/textosProfesional"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/profeNombre"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginTop="10dp"
+                                                android:text="campo Vacio"
+                                                android:textColor="#000000" />
+
+                                            <TextView
+                                                android:id="@+id/profeGenero"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/profeNombre"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginTop="10dp"
+                                                android:text="campo Vacio"
+                                                android:textColor="#000000" />
+
+                                            <TextView
+                                                android:id="@+id/profeInstru"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/profeGenero"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginTop="10dp"
+                                                android:text="campo Vacio"
+                                                android:textColor="#000000" />
+
+                                            <TextView
+                                                android:id="@+id/profeWeb"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/profeInstru"
+                                                android:layout_gravity="center_horizontal"
+                                                android:layout_marginTop="10dp"
+                                                android:text="campo Vacio"
+                                                android:textColor="#000000" />
+
+                                            <TextView
+                                                android:id="@+id/profePrecio"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/profeWeb"
+                                                android:layout_marginTop="10dp"
+                                                android:text="New Text"
+                                                android:textColor="#000000" />
+                                        </RelativeLayout>
+                                    </RelativeLayout>
+                                </RelativeLayout>
+                            </RelativeLayout>
+
+                            <Button
+                                android:id="@+id/botonRecorrido"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_below="@+id/profesional"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/buttonstyle"
+                                android:text="Recorrido Profesional" />
+
+                            <RelativeLayout
+                                android:id="@+id/textoRecorrido"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_below="@+id/botonRecorrido"
+                                android:layout_centerHorizontal="true"
+                                android:orientation="vertical">
+
+                                <ScrollView
+                                    android:id="@+id/scrollRecorrido"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginBottom="20dp" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </ScrollView>
+
+                <RelativeLayout
+                    android:id="@+id/infoGaleria"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <GridView
+                        android:id="@+id/galeria"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:horizontalSpacing="5dp"
+                        android:numColumns="3"
+                        android:transitionGroup="false"
+                        android:verticalSpacing="5dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/infoVideos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ScrollView
+                        android:id="@+id/scrollView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <Button
+                                android:id="@+id/botonYoutube"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/buttonstyle"
+                                android:text="Video Promoción" />
+
+                            <RelativeLayout
+                                android:id="@+id/layoutYoutube"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_below="@+id/botonYoutube"
+                                android:layout_marginTop="10dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/anadirEnlaceYotube"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp">
+
+                                    <EditText
+                                        android:id="@+id/textoEnlaceYoutube"
+                                        android:layout_width="200dp"
+                                        android:layout_height="35dp"
+                                        android:layout_centerInParent="true"
+                                        android:background="@drawable/editextstyle"
+                                        android:hint="Escriba el enlace"
+                                        android:paddingLeft="10dp"
+                                        android:textColor="#000000"
+                                        android:textColorHint="#000000" />
+
+                                    <ImageButton
+                                        android:id="@+id/botonOkEnlace"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_toRightOf="@+id/textoEnlaceYoutube"
+                                        android:background="@null"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/tick" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="#a8a8a8"></RelativeLayout>
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/videosYoutube"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_below="@+id/anadirEnlaceYotube"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginBottom="10dp">
+
+                                    <!--<com.google.android.youtube.player.YouTubePlayerView
+                                        android:id="@+id/youtube_view"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"/>-->
+
+                                </RelativeLayout>
+                            </RelativeLayout>
+
+                            <Button
+                                android:id="@+id/botonSociales"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_below="@+id/layoutYoutube"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/buttonstyle"
+                                android:text="Redes Sociales" />
+
+                            <RelativeLayout
+                                android:id="@+id/layoutSociales"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_below="@+id/botonSociales"
+                                android:layout_marginTop="10dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layoutEnlacesOk"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp">
+
+                                    <EditText
+                                        android:id="@+id/textoEnlaceRedes"
+                                        android:layout_width="200dp"
+                                        android:layout_height="35dp"
+                                        android:layout_centerInParent="true"
+                                        android:background="@drawable/editextstyle"
+                                        android:hint="Escriba el enlace"
+                                        android:paddingLeft="10dp"
+                                        android:textColor="#000000"
+                                        android:textColorHint="#000000" />
+
+                                    <ImageButton
+                                        android:id="@+id/botonEnlaceRedes"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_toRightOf="@+id/textoEnlaceRedes"
+                                        android:background="@null"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/tick" />
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_alignParentBottom="true"
+                                        android:background="#a8a8a8"></RelativeLayout>
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/layoutEnlacesRedes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/layoutEnlacesOk"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="20dp"
+                                    android:orientation="vertical"></LinearLayout>
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </ScrollView>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/recorrido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actionBar"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_corners"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/perfil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Recorrido"
+                    android:textColor="#000000"
+                    android:textSize="25dp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView18"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/seccion1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true">
+
+                            <RelativeLayout
+                                android:id="@+id/tipo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <EditText
+                                    android:id="@+id/textoTipo"
+                                    android:layout_width="200dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="top"
+                                    android:background="@drawable/editextstyle"
+                                    android:hint="Tipo de Evento"
+                                    android:paddingLeft="10dp"
+                                    android:textColorHint="#000000" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/genero"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tipo">
+
+                                <EditText
+                                    android:id="@+id/textoGeneroReco"
+                                    android:layout_width="200dp"
+                                    android:layout_height="35dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/editextstyle"
+                                    android:hint="Genero"
+                                    android:paddingLeft="10dp"
+                                    android:textColorHint="#000000" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/instrumento"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/genero">
+
+                                <EditText
+                                    android:id="@+id/textoInstruReco"
+                                    android:layout_width="200dp"
+                                    android:layout_height="35dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/editextstyle"
+                                    android:hint="Instrumento"
+                                    android:paddingLeft="10dp"
+                                    android:textColorHint="#000000" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/fecha"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/instrumento">
+
+                                <EditText
+                                    android:id="@+id/textoFechIniReco"
+                                    android:layout_width="200dp"
+                                    android:layout_height="35dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/editextstyle"
+                                    android:hint="Fecha de Inicio"
+                                    android:paddingLeft="10dp"
+                                    android:textColorHint="#000000" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/fechaFin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/fecha">
+
+                                <EditText
+                                    android:id="@+id/textoFechFinReco"
+                                    android:layout_width="200dp"
+                                    android:layout_height="35dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/editextstyle"
+                                    android:hint="Fecha de Fin"
+                                    android:paddingLeft="10dp"
+                                    android:textColorHint="#000000" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/ciudad"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/fechaFin">
+
+                                <EditText
+                                    android:id="@+id/textoCiudadReco"
+                                    android:layout_width="200dp"
+                                    android:layout_height="35dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/editextstyle"
+                                    android:hint="Dirección"
+                                    android:paddingLeft="10dp"
+                                    android:textColorHint="#000000" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/seccion2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/seccion1"
+                        android:layout_centerHorizontal="true">
+
+                        <EditText
+                            android:id="@+id/resumenReco"
+                            android:layout_width="200dp"
+                            android:layout_height="150dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/editextstyle"
+                            android:ems="10"
+                            android:hint="Resumen"
+                            android:inputType="textMultiLine"
+                            android:paddingLeft="10dp"
+                            android:textColorHint="#000000" />
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/guardarRecorrido"
+                        android:layout_width="160dp"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/seccion2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/buttonstyle"
+                        android:text="Guardar" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/imagenFondo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_corners"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:text="Aun no ha elegido una imagen de portada"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView14"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:text="Seleccione una imagen"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/textView15"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:scaleType="centerCrop" />
+
+            <Button
+                android:id="@+id/botonsubir"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/imageView2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/buttonstyle"
+                android:text="Seleccionar" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/imagenArtista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_corners"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="15dp"
+                android:text="Aun no ha seleccionado la imagen profesional" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView16"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:text="Seleccione una imagen profesional" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/textView17"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:scaleType="centerCrop" />
+
+            <Button
+                android:id="@+id/botonImagenArtista"
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/imageView4"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/buttonstyle"
+                android:text="Seleccionar" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/busquedaArtista"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/editextstyle"
+            android:hint="Buscar..."
+            android:lines="1"
+            android:paddingLeft="10dp"
+            android:textColorHint="#000000" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutFormulario"
+        android:layout_width="200dp"
+        android:layout_height="400dp"
+        android:layout_below="@+id/actionBar"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ListView
+            android:id="@+id/listaArPlata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:visibility="visible" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

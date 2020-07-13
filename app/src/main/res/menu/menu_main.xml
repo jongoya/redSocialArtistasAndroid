@@ -1,19 +1,23 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context=".Login.LoginActivity">
-    <!--<item android:id="@+id/action_settings" android:title="Registrar"
-        android:orderInCategory="100" app:showAsAction="always"
-        />
-    <item android:id="@+id/paso2" android:title="Pag.2"
-        android:orderInCategory="100" app:showAsAction="always"
-        android:visible="false"/>
-    <item android:id="@+id/paso3" android:title="Pag.3"
-        android:orderInCategory="100" app:showAsAction="always"
-        android:visible="false"/>
-    <item android:id="@+id/pasofinal" android:title="Finalizar"
-        android:orderInCategory="100" app:showAsAction="always"
-        android:visible="false"/>
-    <item android:id="@+id/pasoOlvidado" android:title="Enviar"
-        android:orderInCategory="100" app:showAsAction="always"
-        android:visible="false"/>-->
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_novedades"
+        android:enabled="true"
+        android:icon="@drawable/novedades_image"
+        android:title="Novedades"
+        android:visible="true" />
+    <item
+        android:id="@+id/nav_busqueda"
+        android:enabled="true"
+        android:icon="@drawable/lupa_image"
+        android:title="Busqueda"
+        android:visible="true" />
+    <item
+        android:id="@+id/nav_mensajeria"
+        android:icon="@drawable/mensajes_image"
+        android:title="Mensajes" />
+    <item
+        android:id="@+id/nav_perfil"
+        android:icon="@drawable/perfil_image"
+        android:title="Perfil" />
 </menu>

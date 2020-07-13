@@ -166,6 +166,36 @@ public class RegistroProfesionalActivity extends AppCompatActivity {
         return results;
     }
 
+    private ArrayList<Long> getInstrumentoIdsFromOptions(ArrayList<ListSelectorModel> options) {
+        ArrayList<InstrumentoModel> instrumentos = Constants.databaseManager.instrumentoManager.getAllInstrumentos();
+        ArrayList<Long> results = new ArrayList<>();
+
+        for (ListSelectorModel option: options) {
+            for (InstrumentoModel instrumento: instrumentos) {
+                if (option.getId() == instrumento.getId()) {
+                    results.add(instrumento.getId());
+                }
+            }
+        }
+
+        return results;
+    }
+
+    private ArrayList<Long> getEstiloIdsFromOptions(ArrayList<ListSelectorModel> options) {
+        ArrayList<EstiloModel> estilos = Constants.databaseManager.estiloManager.getAllEstilos();
+        ArrayList<Long> results = new ArrayList<>();
+
+        for (ListSelectorModel option: options) {
+            for (EstiloModel estilo: estilos) {
+                if (option.getId() == estilo.getId()) {
+                    results.add(estilo.getId());
+                }
+            }
+        }
+
+        return results;
+    }
+
     private ArrayList<EstiloModel> getEstilosFromOptions(ArrayList<ListSelectorModel> options) {
         ArrayList<EstiloModel> estilos = Constants.databaseManager.estiloManager.getAllEstilos();
         ArrayList<EstiloModel> results = new ArrayList<>();
@@ -226,7 +256,7 @@ public class RegistroProfesionalActivity extends AppCompatActivity {
                     ListSelectorModel option = (ListSelectorModel) data.getSerializableExtra("option");
                     RolModel rol = convertListSelectorToRol(option);
                     if (rol != null) {
-                        user.setRol(rol);
+                        user.setRol(rol.getId());
                         rolField.setText(rol.getNombre());
                     }
                     break;
@@ -238,13 +268,13 @@ public class RegistroProfesionalActivity extends AppCompatActivity {
                 case instrumentoRequest:
                     ArrayList<ListSelectorModel> options = (ArrayList<ListSelectorModel>) data.getSerializableExtra("option");
                     ArrayList<InstrumentoModel> instrumentos = getInstrumentosFromOptions(options);
-                    user.setInstrumentos(instrumentos);
+                    user.setInstrumentos(getInstrumentoIdsFromOptions(options));
                     instrumentoField.setText(getInstrumentosStringFromArray(instrumentos));
                     break;
                 case estiloRequest:
                     ArrayList<ListSelectorModel> optionsEstilos = (ArrayList<ListSelectorModel>) data.getSerializableExtra("option");
                     ArrayList<EstiloModel> estilos = getEstilosFromOptions(optionsEstilos);
-                    user.setEstilos(estilos);
+                    user.setEstilos(getEstiloIdsFromOptions(optionsEstilos));
                     estiloField.setText(getEstilosStringFromArray(estilos));
                     break;
                 case webRequest:

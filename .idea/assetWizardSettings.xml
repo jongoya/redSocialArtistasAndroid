@@ -47,8 +47,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="$USER_HOME$/Downloads/list_icon.png" />
-                                      <entry key="outputName" value="list_icon" />
+                                      <entry key="imageAsset" value="$USER_HOME$/Downloads/periodico.png" />
+                                      <entry key="outputName" value="novedades_image" />
                                       <entry key="theme" value="HOLO_DARK" />
                                       <entry key="themeColor" value="ffffff" />
                                     </map>

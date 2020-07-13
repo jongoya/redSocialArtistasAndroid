@@ -1,42 +1,34 @@
 package com.gestor.jonny.red.Login;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.RelativeLayout;
-import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.gestor.jonny.red.Commons.Commons;
-import com.gestor.jonny.red.Commons.Preferencias;
-import com.gestor.jonny.red.ContraseñaOlvidada.ContraseñaOlvidadaActivity;
-import com.gestor.jonny.red.R;
 import com.gestor.jonny.red.Commons.Constants;
+import com.gestor.jonny.red.ContraseñaOlvidada.ContraseñaOlvidadaActivity;
+import com.gestor.jonny.red.Models.LoginModel;
+import com.gestor.jonny.red.Models.UserAndLoginModel;
+import com.gestor.jonny.red.R;
 import com.gestor.jonny.red.Registro.RegistroPersonalActivity;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import com.gestor.jonny.red.Plataforma.Plataforma;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.textoUsuario)EditText userField;
     @BindView(R.id.textoContra)EditText passwordField;
-    @BindView(R.id.recordar) CheckBox recordar;
+    @BindView(R.id.Login) RelativeLayout rootLayout;
+
+    private RelativeLayout loadingStateView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,13 +70,38 @@ public class LoginActivity extends AppCompatActivity {
         loginService();
     }
 
+    private void openPlataformaActivity() {
+        Intent intent = new Intent(LoginActivity.this, Plataforma.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
     private void loginService(){
-        //TODO servicio login
-        //GUARDAR los datos del usuario si el login esta bien
-        if (recordar.isChecked()){
-            Preferencias.saveUserName(getApplicationContext(), userField.getText().toString());
-            Preferencias.savePassword(getApplicationContext(), passwordField.getText().toString());
-        }
+        LoginModel login = new LoginModel(userField.getText().toString(), passwordField.getText().toString());
+        loadingStateView = Commons.createLoadingStateView(getApplicationContext(), "Iniciando sesión");
+        rootLayout.addView(loadingStateView);
+        Call<UserAndLoginModel> call = Constants.webServices.login(login);
+        call.enqueue(new Callback<UserAndLoginModel>() {
+            @Override
+            public void onResponse(Call<UserAndLoginModel> call, Response<UserAndLoginModel> response) {
+                rootLayout.removeView(loadingStateView);
+                if (response.code() == 200) {
+                    Constants.databaseManager.loginManager.saveLogin(response.body().getLogin());
+                    Constants.databaseManager.userManager.saveUser(response.body().getUser());
+                    openPlataformaActivity();
+                } else if (response.code() == 302) {
+                    Commons.showGenericAlertMessage(LoginActivity.this, "El usuario no existe, revise credenciales");
+                } else if (response.code() == 420) {
+                    Commons.showGenericAlertMessage(LoginActivity.this, "La contraseña es incorrecta");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserAndLoginModel> call, Throwable t) {
+                rootLayout.removeView(loadingStateView);
+                Commons.showGenericAlertMessage(LoginActivity.this, "Error iniciando sesión, inténtelo de nuevo");
+            }
+        });
     }
 }
 

@@ -4,23 +4,20 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class UserModel implements Serializable {
+    private long userId;
     private String nombre = "";
     private String apellidos = "";
     private int edad = 0;
     private long fecha = 0;
     private String correo = "";
-    private String pais = "";
     private String direccion = "";
-    private RolModel rol;
+    private long rol;
     private String nombreArtista = "";
-    private ArrayList<InstrumentoModel> instrumentos = new ArrayList<>();
-    private ArrayList<EstiloModel> estilos = new ArrayList<>();
+    private ArrayList<Long> instrumentos = new ArrayList<>();
+    private ArrayList<Long> estilos = new ArrayList<>();
     private String paginaWeb = "";
     private double precio = 0.0;
-    private String usuario = "";
-    private String password = "";
-    private String clave = "";
-    private ArrayList<RecorridoModel> recorrido = new ArrayList<>();
+    //private ArrayList<RecorridoModel> recorrido = new ArrayList<>();
 
     public String getNombre() {
         return nombre;
@@ -62,14 +59,6 @@ public class UserModel implements Serializable {
         this.correo = correo;
     }
 
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
     public String getDireccion() {
         return direccion;
     }
@@ -78,21 +67,13 @@ public class UserModel implements Serializable {
         this.direccion = direccion;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public ArrayList<RecorridoModel> getRecorrido() {
+    /*public ArrayList<RecorridoModel> getRecorrido() {
         return recorrido;
     }
 
     public void setRecorrido(ArrayList<RecorridoModel> recorrido) {
         this.recorrido = recorrido;
-    }
+    }*/
 
     public String getNombreArtista() {
         return nombreArtista;
@@ -102,19 +83,19 @@ public class UserModel implements Serializable {
         this.nombreArtista = nombreArtista;
     }
 
-    public ArrayList<InstrumentoModel> getInstrumentos() {
+    public ArrayList<Long> getInstrumentos() {
         return instrumentos;
     }
 
-    public void setInstrumentos(ArrayList<InstrumentoModel> instrumentos) {
+    public void setInstrumentos(ArrayList<Long> instrumentos) {
         this.instrumentos = instrumentos;
     }
 
-    public ArrayList<EstiloModel> getEstilos() {
+    public ArrayList<Long> getEstilos() {
         return estilos;
     }
 
-    public void setEstilos(ArrayList<EstiloModel> estilos) {
+    public void setEstilos(ArrayList<Long> estilos) {
         this.estilos = estilos;
     }
 
@@ -134,27 +115,19 @@ public class UserModel implements Serializable {
         this.precio = precio;
     }
 
-    public RolModel getRol() {
+    public long getRol() {
         return rol;
     }
 
-    public void setRol(RolModel rol) {
+    public void setRol(long rol) {
         this.rol = rol;
     }
 
-    public String getPassword() {
-        return password;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 }

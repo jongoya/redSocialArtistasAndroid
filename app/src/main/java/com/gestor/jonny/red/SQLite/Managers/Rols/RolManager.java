@@ -44,8 +44,7 @@ public class RolManager {
 
     public void addRol(RolModel rol) {
         ContentValues content = fillRolDataToDatabaseObject(rol);
-        long id = writableDatabase.insert(tableName, null, content);
-        System.out.println();
+        writableDatabase.insert(tableName, null, content);
     }
 
     private ContentValues fillRolDataToDatabaseObject(RolModel rol) {

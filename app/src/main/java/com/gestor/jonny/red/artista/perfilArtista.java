@@ -928,7 +928,7 @@ public class perfilArtista extends YouTubeBaseActivity implements  YouTubePlayer
             @Override
             public void onClick(View v) {
                 layoutRedesSociales.setVisibility(View.VISIBLE);
-                inFromRightAnimation(R.id.layoutViewRedSocial);
+                //inFromRightAnimation(R.id.layoutViewRedSocial);
                 viewRedesSociales.setWebViewClient(new WebViewClient());
                 viewRedesSociales.loadUrl("http://"+enlaceRed.getText()+"");
 
